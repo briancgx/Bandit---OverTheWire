@@ -1,0 +1,331 @@
+-----> Bandit 0 <-----
+-> ssh bandit0@bandit.labs.overthewire.org -p2220
+-> pass: bandit0
+-> ls -l
+-> cat readme
+-> exit
+
+-----> Bandit 1 <-----
+-> sshpass -p 'NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL' ssh  bandit1@bandit.labs.overthewire.org -p2220
+-> ls -l 
+-> cat ./-
+-> exit
+
+-----> Bandit 2 <-----
+-> sshpass -p 'rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi' ssh bandit2@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> cat spaces\ in\ this\ filename
+-> exit
+
+-----> Bandit 3 <-----
+-> sshpass -p 'aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG' ssh bandit3@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> find .
+-> cd inhere
+-> ls -a
+-> cat .hidden 
+
+-----> Bandit 4 <-----
+-> sshpass -p '2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe' ssh bandit4@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> cd inhere
+-> ls -l
+-> find . -type f | grep "\-file" | xargs file
+-> cat $(pwd)/-file07
+-> exit
+
+-----> Bandit 5 <-----
+-> sshpass -p 'lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR' ssh bandit5@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> cd inhere
+-> ls -l
+-> find . -type f -readable ! -executable -size 1033c | xargs cat | xargs
+-> exit
+
+-----> Bandit 6 <-----
+-> sshpass -p 'P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU' ssh bandit6@bandit.labs.overthewire.org -p2220
+-> cd /
+-> find . -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
+-> exit
+
+-----> Bandit 7 <-----
+-> sshpass -p 'z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S' ssh bandit7@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> cat "data.txt" | grep "millionth" | awk 'NF{print $2}'
+-> exit
+
+-----> Bandit 8 <-----
+-> sshpass -p 'TESKZC0XvTetK0S9xNwm25STk5iWrBvP' ssh bandit8@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> sort data.txt | uniq -u
+-> exit
+
+-----> Bandit 9 <-----
+-> sshpass -p 'EN632PlfYiZbn3PhVK3XOGSlNInNE00t' ssh bandit9@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> file data.txt
+-> strings data.txt | grep "==="
+-> strings data.txt | grep "===" | tail -n 1
+-> strings data.txt | grep "===" | tail -n 1 | awk 'NF{print $NF}'
+-> exit
+
+-----> Bandit 10 <-----
+-> sshpass -p 'G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s' ssh bandit10@bandit.labs.overthewire.org -p2220
+-> ls -l 
+-> file data.txt
+-> cat data.txt | base64 -d 
+-> cat data.txt | base64 -d | awk 'NF{print $NF}'
+-> exit
+
+-----> Bandit 11 <-----
+-> sshpass -p '6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM' ssh bandit11@bandit.labs.overthewire.org -p2220
+-> ls -l 
+-> cat data.txt 
+-> cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+-> cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' | awk 'NF{print $NF}'
+-> exit
+
+-----> Bandit 12 <-----
+-> sshpass -p 'JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv' ssh bandit12@bandit.labs.overthewire.org -p2220
+-> ls -l 
+-> cat data.txt
+---> cd 'cd /home/kali/Documents/bandit'
+---> touch data
+---> cat data | xxd -r | sponge data
+---> file data
+---> ghex data
+---> mv data data.gz
+---> ./decompressor.sh  (Script creado para automatizar las estracciones)
+---> cat data9.bin
+---> cat data9.bin | awk 'NF{print $NF}'
+-> exit 
+
+-----> Bandit 13 <-----
+-> sshpass -p 'wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw' ssh bandit13@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> ssh -i sshkey.private bandit14@localhost -p 2220
+-> cat /etc/bandit_pass/bandit14
+-> exit
+
+-----> Bandit 14 <-----
+-> ssh bandit14@bandit.labs.overthewire.org -p2220
+-> 'press enter'
+-> sshpass -p 'fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq' ssh bandit14@bandit.labs.overthewire.org -p2220
+-> nc localhost 30000
+-> fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+-> exit
+-> exit
+
+-----> Bandit 15 <-----
+-> sshpass -p 'jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt' ssh bandit15@bandit.labs.overthewire.org -p2220
+-> ncat --ssl localhost 30001
+-> jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+-> exit
+-> exit
+
+-----> Bandit 16 <-----
+-> sshpass -p 'JQttfApK4SeyHwDlI9SXGR50qclOAil1' ssh bandit16@bandit.labs.overthewire.org -p2220
+-> nmap --open -T5 -v -n -p31000-32000 127.0.0.1 
+-> ncat --ssl 127.0.0.1 31790
+-> JQttfApK4SeyHwDlI9SXGR50qclOAil1 (Copiamos la key)
+-> cd /temp 
+-> mktemp -d
+-> cd /(El output del comando anterior)
+-> nano id_rsa (Pegamos la key)
+-> chmod 600 id_rsa 
+-> ssh -i id_rsa bandit17@localhost -p 2220
+-> ls -l /etc/bandit_pass/
+-> cat /etc/bandit_pass/bandit17
+-> exit
+
+-----> Bandit17 <-----
+-> sshpass -p 'VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e' ssh bandit17@bandit.labs.overthewire.org -p2220
+-> ls ls-
+-> diff passwords.old password.new 
+-> exit
+
+-----> Bandit18 <-----
+-> sshpass -p 'hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg' ssh bandit18@bandit.labs.overthewire.org -p2220 bash
+-> ls
+-> cat readme
+-> exit
+
+-----> Bandit 19 <-----
+-> sshpass -p 'awhqfNnAbc1naukrpqDYcF95h7HoMTrC' ssh bandit19@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> ./bandit20-do whoami
+-> ./bandit20-do id
+-> ./bandit20-do sh -p
+-> cd  /etc/bandit_pass
+-> ls -l 
+-> cat bandit20
+-> exit
+-> exit
+
+-----> Bandit20 <-----
+-> sshpass -p 'VxCazJaVykI6W36BkBU0mJTCM8rR95XT' ssh bandit20@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> nc -nlvp 4646
+-> ./subconnect 4646  (En otra terminal igualmente conectada a bandit20)
+-> VxCazJaVykI6W36BkBU0mJTCM8rR95XT  (En la terminal de escucha)
+-> exit
+
+-----> Bandit21 <-----
+-> sshpass -p 'NvEJF7oVjkddltPSrdKEFOllh9V1IBcq' ssh bandit21@bandit.labs.overthewire.org -p2220
+-> cd /etc/cron.d 
+-> ls -l
+-> cat cronjob_bandit22
+-> cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv (Dependiendo  el script)
+-> exit
+
+-----> Bandit 22 <-----
+-> sshpass -p 'WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff' ssh bandit22@bandit.labs.overthewire.org -p2220
+-> cd /etc/cron.d
+-> ls -l
+-> cat cronjob_bandit23
+-> cat /usr/bin/cronjob_bandit23.sh *Leer el script*
+-> echo I am user bandit23 | md5sum | awk '{print $1}'
+-> cat /tmp/8ca319486bfbbc3663ea0fbe81326349  (El archivo que nos de $mytarget)
+-> exit
+
+-----> Bandit23 <-----
+-> sshpass -p 'QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G' ssh bandit23@bandit.labs.overthewire.org -p2220
+-> cd /etc/cron.d
+-> ls -l
+-> cat cronjob_bandit24
+-> cat /usr/bin/cronjob_bandit24.sh
+-> cd /var/spool/bandit24/foo 
+-> dir_name=$(mktemp -d)    (Para almacenar la ruta en una variable) 
+-> cd $dir_name
+-> touch script.sh
+-> chmod +x  script.sh
+-> nano script.sh
+
+	--> #!/bin/bash 
+
+	    cat /etc/bandit_pass/bandit24 > /tmp/tmp.ukceFdGtpW/bandit24_pass.log
+	    chmod o+r /tmp/tmp.ukceFdGtpW/bandit24_pass.log 
+
+-> chmod o+rw /var/spool/bandit24/foo
+-> cp script.sh /var/spool/bandit24/foo/testing
+-> chmod +x /var/spool/bandit24/foo/testing
+-> watch -n 1 ls -l
+-> cat bandit24_pass.log
+-> exit
+
+-----> Bandit24 <-----
+-> sshpass -p 'VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar' ssh bandit24@bandit.labs.overthewire.org -p2220
+-> dir_name=$(mktemp -d)
+-> cd $dir_name
+-> for pin in {0000..9999}; do echo $pin; done       (Probando iteraciones del pin)
+-> for pin in {0000..9999}; do echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar $pin"; done     (Lo mismo con la  contraseña añadida)
+-> for pin in {0000..9999}; do echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar $pin"; done > combinations.txt   (Lo metemos a un .txt)
+-> cat combinations.txt | nc localhost 30002 
+-> tac combinations.txt | nc localhost 30002 | grep -vE  "Wrong|Please enter"    (Filtramos resultados para la contraseña)
+-> tac combinations.txt | nc localhost 30002 | grep "Wrong! Please" | wc -l | awk '{print $1 + 1}' | xargs -I {} sed -n "{}p" combinations.txt |  awk 'NF{print "El pin es: " $NF}'   (Asi conseguimos el pin)
+
+----> Bandit25 <-----
+-> sshpass -p 'p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d' ssh bandit25@bandit.labs.overthewire.org -p2220
+-> ls -l
+-> cat /etc/passwd | grep bandit26
+-> cat /usr/bin/showtext
+-> ssh -i bandit26.sshkey bandit26@localhost -p2220   (Hacer más chica la pantalla)
+-> v   (Entrar en modo lectura)
+-> Esc   Shift + :   (Modo declarar variables)
+-> ":set shell=/bin/bash"
+-> Esc   Shift + :
+-> :shell
+
+-----> Bandit26 <-----
+-> ls -l
+-> ./bandit27-do whoami
+-> ./bandit27-do cat /etc/bandit_pass/bandit27
+-> exit  (De todo)
+
+-----> Bandit27 <-----
+-> sshpass -p 'YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS' ssh bandit27@bandit.labs.overthewire.org -p2220
+-> mktemp -d
+-> cd /tmp/tmp.APzTTDk62F
+-> git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+-> yes 
+-> YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
+-> ls -l
+-> cd repo
+-> ls -l 
+-> cat README
+-> exit
+
+-----> Bandit28 <-----
+-> sshpass -p 'AVanL161y9rsbcJIsFHuw35rjaOM19nR' ssh bandit28@bandit.labs.overthewire.org -p2220
+-> mktemp -d 
+-> cd /tmp/tmp.IZDgsVNHFt
+-> git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+-> yes
+-> AVanL161y9rsbcJIsFHuw35rjaOM19nR
+-> ls -l
+-> cd repo
+-> ls -l
+-> cat README.md
+-> git log
+-> git show 899ba88df296331cc01f30d022c006775d467f28  (fix info leak) 
+-> exit
+
+-----> Bandit29 <-----
+-> sshpass -p 'tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S' ssh bandit29@bandit.labs.overthewire.org -p2220
+-> dir_temp=$(mktemp -d)
+-> cd $dir_temp
+-> git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
+-> yes
+-> tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
+-> ls -l 
+-> cd repo 
+-> ls -l
+-> git branch -a 
+-> git checkout dev
+-> exit
+
+-----> Bandit30 <-----
+-> sshpass -p 'xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS' ssh bandit30@bandit.labs.overthewire.org -p2220
+-> dir_temp=$(mktemp -d)
+-> cd $dir_temp
+-> git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+-> yes
+-> xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
+-> ls -l
+-> cd repo
+-> git tag 
+-> git show secret
+-> exit
+
+-----> Bandit31 <-----
+-> sshpass -p 'OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt' ssh bandit31@bandit.labs.overthewire.org -p2220
+-> dir_temp=$(mktemp -d) 
+-> cd $dir_temp
+-> git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo
+-> yes
+-> OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+-> ls -l 
+-> cd repo
+-> ls -l 
+-> cat README.md
+-> nano key.txt
+	-> May I come in? 
+-> git add -f key.txt
+-> git commit -m "Creamos un nuevo archivo"
+-> git push -u origin master
+-> yes 
+-> OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+-> exit
+
+-----> Bandit32 <-----
+-> sshpass -p 'rmCBvG56y58BXzv98yZGdO7ATVL5dW8y' ssh bandit32@bandit.labs.overthewire.org -p2220
+-> $0  (Ejecutamos una sh para tener una shell)
+-> bash
+-> pwd
+-> cd /home/bandit33
+-> ls -l
+-> cat README.txt
+-> exit
+
+
+--------------------> FINISH OF BANDIT <--------------------
